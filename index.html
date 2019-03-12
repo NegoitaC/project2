@@ -1,0 +1,68 @@
+
+<script>
+     function computerPlay(){
+         let choice=Math.floor(Math.random()*3);
+         let choide2;
+         if(choice===1){
+             choice2='paper';
+          }
+          else if(choice===2){
+              choice2='scissors';
+          }
+          else if(choice===3){
+              choice2='rock';
+          }
+          return choice2;
+  }
+  function oneGame(){
+      let computerWon=0;
+      let PlayerWon=0;
+      let playerchoice;
+      let i;
+      let computerChoice;
+      for(i=1;i<=5;i++){ 
+      playerchoice=prompt('rock,paper or scissors?');
+      console.log('the player has chosen:'+playerchoice);
+      
+      computerChoice=computerPlay();
+
+      console.log('the computer has chosen:'+computerChoice);
+      if(playerchoice.toLowerCase()===computerChoice.toLowerCase()){
+          console.log('Its a draw');}
+      else if(playerchoice.toLowerCase()==='paper' && computerChoice.toLowerCase()==='rock'){
+           console.log('the Player won!');
+           PlayerWon++;
+      }
+      else if(playerchoice.toLowerCase()==='paper' && computerChoice.toLowerCase()==='scissors'){
+          console.log('the computer won!');
+          computerWon++
+      }
+      else if(playerchoice.toLowerCase()==='rock' && computerChoice.toLowerCase()==='scissors'){
+        console.log('the Player won!');
+        PlayerWon++;
+      }
+      else if(playerchoice.toLowerCase()==='rock' && computerChoice.toLowerCase()==='paper'){
+        console.log('the computer won!');
+        computerwon++;
+      }
+      else if(playerchoice.toLowerCase()==='scissors' && computerChoice.toLowerCase()==='paper'){
+        console.log('the Player won!');
+        PlayerWon++
+      }
+      else if(playerchoice.toLowerCase()==='scissors' && computerChoice.toLowerCase()==='rock'){
+        console.log('the computer won!');
+        computerWon++; 
+      }}
+       if(PlayerWon>computerWon){
+           console.log('Player won:'+PlayerWon+' to '+computerWon);
+
+       }else if(computerWon>playerWon){
+           console.log('Computer won:'+computerWon+' to '+PlayerWon);
+       }
+    }
+    
+    oneGame();
+    
+
+     
+</script>
